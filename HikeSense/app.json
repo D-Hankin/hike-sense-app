@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "HikeSense",
+    "slug": "HikeSense",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/hikeSenseLogo.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/hikeSenseLogo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/hikeSenseLogo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.dhankin.HikeSense"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/hikeSenseLogo.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "dedaca5c-d2af-4a9a-9a1f-076ef671c7d0"
+      }
+    }
+  }
+}
