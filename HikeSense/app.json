@@ -20,7 +20,13 @@
         "foregroundImage": "./assets/images/hikeSenseLogo.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.dhankin.HikeSense"
+      "package": "com.dhankin.HikeSense",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "BLUETOOTH_SCAN",
+        "BLUETOOTH_CONNECT",
+        "BLUETOOTH_ADVERTISE"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -28,7 +34,15 @@
       "favicon": "./assets/images/hikeSenseLogo.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "react-native-ble-plx",
+        {
+          "isBackgroundEnabled": true,
+          "modes": ["peripheral", "central"],
+          "bluetoothAlwaysPermission": "Allow $(PRODUCT_NAME) to connect to Bluetooth devices"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

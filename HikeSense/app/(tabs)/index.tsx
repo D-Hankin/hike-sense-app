@@ -1,6 +1,8 @@
 import { Text, View, ActivityIndicator, StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
-import { useUserContext } from '../userContext'
+import { useUserContext } from '../userContext';
+import { BleManager } from "react-native-ble-plx";
+import { PermissionsAndroid, Platform } from "react-native";
 
 export default function Index() {
   interface User {
@@ -76,6 +78,24 @@ export default function Index() {
 
     setLoading(false);
   };
+
+  const requestLocationPermission = async () => {
+    if (Platform.OS === 'android') {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        {
+          title: 'Location Permission',
+          message: 'Bluetooth Low Energy requires access to your location',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        }
+      );
+      return granted === PermissionsAndroid.RESULTS.GRANTED;
+    }
+    return true; // iOS doesn't need explicit permission
+  };
+  
 
   return (
     <View style={styles.container}>
