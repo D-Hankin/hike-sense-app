@@ -1,50 +1,56 @@
-# Welcome to your Expo app 👋
+HikeSense App
+=============
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+HikeSense is a mobile application designed to enhance hiking safety and social experience by providing real-time data monitoring, alerting functionalities, friend connections, and chat features. This app connects to the HikeSense server and integrates with Bluetooth for real-time heart rate monitoring, enabling users to manage their hiking activities, receive alerts, and stay connected with friends.
 
-## Get started
+Stack
+-----
 
-1. Install dependencies
+-   **Client**: `/hike-sense-client`
+-   **Server**: `/hike-sense-server`
+-   **Arduino**: `/hike-sense-arduino`
 
-   ```bash
-   npm install
-   ```
+Features
+--------
 
-2. Start the app
+### User Management
 
-   ```bash
-    npx expo start
-   ```
+-   User sign-up, login, and JWT-based authentication.
+-   Account management with friend connections for safety tracking.
 
-In the output, you'll find options to open the app in a
+### Hiking Data Collection
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+-   Collection and display of hike details, including route, heart rate (via Bluetooth), temperature, and more.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Real-Time Heart Rate Monitoring
 
-## Get a fresh project
+-   Connects to a pulse sensor through Bluetooth for real-time heart rate monitoring during hikes.
 
-When you're ready, run:
+### Safety Alerts
 
-```bash
-npm run reset-project
-```
+-   Customized alerts based on heart rate thresholds for each user.
+-   Location markers sent as email notifications to users' contacts at users request.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Location Sharing
 
-## Learn more
+-   Users can send location markers to their contacts for enhanced safety and communication.
 
-To learn more about developing your project with Expo, look at the following resources:
+### Subscription Management
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+-   Integration with Stripe for upgrading subscription plans directly from the app.
 
-## Join the community
+### Real-Time Communication
 
-Join our community of developers creating universal apps.
+-   WebSocket-based chat feature for friend-to-friend messaging.
+-   Real-time updates on user location and safety statistics.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Technologies
+------------
+
+-   **Framework**: React Native
+-   **State Management**: Context 
+-   **Database**: MongoDB (hosted on MongoDB Atlas)
+-   **Backend Framework**: Spring Boot
+-   **Containerization**: Docker
+-   **AI API**: OpenAI
+-   **Bluetooth**: Bluetooth Low Energy (BLE) for heart rate sensor integration
