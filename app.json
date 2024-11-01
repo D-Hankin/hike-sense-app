@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "HikeSense",
+    "slug": "HikeSense",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/hikeSenseLogo.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/hikeSenseLogo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/hikeSenseLogo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.NOTIFICATIONS"
+      ],
+      "package": "com.dhankin.HikeSense",
+      "config": {
+        "googleMaps": {
+          "apiKey": ""
+        }
+      },
+      "googleServicesFile": "./google-services.json"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "react-native-ble-plx"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b6e2a5e9-f538-4136-840d-285957cdf4ff"
+      }
+    }
+  }
+}
