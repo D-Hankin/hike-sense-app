@@ -1,7 +1,7 @@
 HikeSense App
 =============
 
-HikeSense is a mobile application designed to enhance hiking safety and social experience by providing real-time data monitoring, alerting functionalities, friend connections, and chat features. This app connects to the HikeSense server and integrates with Bluetooth for real-time heart rate monitoring, enabling users to manage their hiking activities, receive alerts, and stay connected with friends.
+HikeSense is a mobile application designed to enhance hiking safety and social experience by providing real-time data monitoring, alerting functionalities and GPS location data. This app connects to the HikeSense server and integrates with Bluetooth for real-time heart rate monitoring, enabling users to manage their hiking activities, receive alerts, and stay connected with friends.
 
 Stack
 -----
