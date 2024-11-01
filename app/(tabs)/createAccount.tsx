@@ -98,7 +98,7 @@ export default function CreateAccount() {
                     value={username}
                     onChangeText={setUsername} 
                     placeholder="Enter your email"
-                    placeholderTextColor="#cccccc" // Light grey for placeholder text
+                    placeholderTextColor="#cccccc" 
                 />
                 
                 <TextInput
@@ -107,7 +107,7 @@ export default function CreateAccount() {
                     onChangeText={setPassword} 
                     placeholder="Enter your password"
                     secureTextEntry 
-                    placeholderTextColor="#cccccc" // Light grey for placeholder text
+                    placeholderTextColor="#cccccc" 
                 />
 
                 <TextInput
@@ -116,7 +116,7 @@ export default function CreateAccount() {
                     onChangeText={setRepeatPassword} 
                     placeholder="Repeat your password"
                     secureTextEntry 
-                    placeholderTextColor="#cccccc" // Light grey for placeholder text
+                    placeholderTextColor="#cccccc" 
                 />
 
                 <TextInput
@@ -124,7 +124,7 @@ export default function CreateAccount() {
                     value={firstName}
                     onChangeText={setFirstName} 
                     placeholder="Enter your first name"
-                    placeholderTextColor="#cccccc" // Light grey for placeholder text
+                    placeholderTextColor="#cccccc" 
                 />
 
                 <TextInput
@@ -132,7 +132,7 @@ export default function CreateAccount() {
                     value={lastName}
                     onChangeText={setLastName} 
                     placeholder="Enter your last name"
-                    placeholderTextColor="#cccccc" // Light grey for placeholder text
+                    placeholderTextColor="#cccccc" 
                 />
                 
                 <Button title="Submit" onPress={handleSubmit} color="green" />
@@ -157,20 +157,20 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 16,
-        color: "#ffffff", // White text color
+        color: "#ffffff", 
     },
     subtitle: {
         fontSize: 20,
-        color: "#ffffff", // White text color
+        color: "#ffffff", 
         marginBottom: 20,
     },
     input: {
         width: '100%',
         padding: 8,
         borderWidth: 1,
-        borderColor: '#ffffff', // White border color
+        borderColor: '#ffffff', 
         borderRadius: 4,
         marginBottom: 16,
-        color: "#ffffff", // White text for input
+        color: "#ffffff", 
     },
 });

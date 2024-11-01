@@ -41,7 +41,7 @@ export default function Login() {
                     type: 'SET_TOKEN',
                     payload: {
                       token: userData.token,
-                      timestamp: Date.now(), // Get the current time
+                      timestamp: Date.now(),
                     },
                   });
                 
@@ -74,7 +74,7 @@ export default function Login() {
                     value={username}
                     onChangeText={setUsername} 
                     placeholder="@Email"
-                    placeholderTextColor="#cccccc" // Light grey for placeholder text
+                    placeholderTextColor="#cccccc" 
                 />
 
                 <TextInput
@@ -83,7 +83,7 @@ export default function Login() {
                     onChangeText={setPassword} 
                     placeholder="Password"
                     secureTextEntry 
-                    placeholderTextColor="#cccccc" // Light grey for placeholder text
+                    placeholderTextColor="#cccccc" 
                 />
 
                 <View style={styles.loginbutton}>
@@ -100,38 +100,38 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         padding: 20,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Dark grey with transparency
-        width: '100%', // Make overlay full width
+        backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+        width: '100%', 
     },
     title: {
         fontSize: 24,
         fontWeight: "bold",
-        color: "#ffffff", // White text color
+        color: "#ffffff", 
         marginBottom: 10,
     },
     subtitle: {
         fontSize: 20,
-        color: "#ffffff", // White text color
+        color: "#ffffff", 
         marginBottom: 20,
     },
     input: {
-        width: '80%', // Make input wider
+        width: '80%', 
         borderWidth: 1,
-        borderColor: '#ffffff', // White border color
+        borderColor: '#ffffff', 
         borderRadius: 5,
         padding: 10,
         marginBottom: 20,
-        color: "#ffffff", // White text for input
+        color: "#ffffff", 
     },
     container: {
         flex: 1,
     },
     loginbutton: {
-        backgroundColor: 'green', // Green button background
-        color: '#ffffff', // White text color
+        backgroundColor: 'green', 
+        color: '#ffffff', 
         padding: 10,
         borderRadius: 5,
-        width: '50%', // Make button wider
-        textAlign: 'center', // Center text
+        width: '50%', 
+        textAlign: 'center', 
     },
 });

@@ -23,7 +23,6 @@ function InnerTabLayout() {
   const { state } = useUserContext();
   const user: User | null = state.user !== null ? (state.user as User) : null;
 
-  // Render tabs for unauthenticated users
   if (user === null) {
     return (
       <Tabs
@@ -66,7 +65,7 @@ function InnerTabLayout() {
             tabBarIcon: ({ color }) => (
               <FontAwesome name="heartbeat" size={24} color={color} />
             ),
-            href:null // Unwanted for unauthenticated users
+            href:null 
           }}
         />
         <Tabs.Screen
@@ -76,7 +75,7 @@ function InnerTabLayout() {
             tabBarIcon: ({ color, focused }) => (
               <TabBarIcon name={focused ? 'map' : 'map-outline'} color={color} />
             ),
-            href:null // Unwanted for unauthenticated users
+            href:null 
           }}
         />
         <Tabs.Screen
@@ -86,7 +85,7 @@ function InnerTabLayout() {
             tabBarIcon: ({ color, focused }) => (
               <TabBarIcon name={focused ? 'people' : 'people-outline'} color={color} />
             ),
-            href: null // Unwanted for unauthenticated users
+            href: null 
           }}
         />
       </Tabs>
@@ -138,7 +137,7 @@ function InnerTabLayout() {
             tabBarIcon: ({ color, focused }) => (
               <TabBarIcon name={focused ? 'map' : 'map-outline'} color={color} />
             ),
-            href:"/hikes" // Show for authenticated users
+            href:"/hikes" 
           }}
         />
         <Tabs.Screen
@@ -148,7 +147,7 @@ function InnerTabLayout() {
             tabBarIcon: ({ color }) => (
               <FontAwesome name="heartbeat" size={24} color={color} />
             ),
-            href:"/heartRate" // Show for authenticated users
+            href:"/heartRate" 
           }}
         />
         <Tabs.Screen
@@ -158,7 +157,7 @@ function InnerTabLayout() {
             tabBarIcon: ({ color, focused }) => (
               <TabBarIcon name={focused ? 'people' : 'people-outline'} color={color} />
             ),
-            href:"/hikeBuddy" // Show for authenticated users
+            href:"/hikeBuddy" 
             }}
         />
       </Tabs>
@@ -207,7 +206,7 @@ function InnerTabLayout() {
             tabBarIcon: ({ color, focused }) => (
               <TabBarIcon name={focused ? 'map' : 'map-outline'} color={color} />
             ),
-            href:"/hikes" // Show for authenticated users
+            href:"/hikes" 
           }}
         />
         <Tabs.Screen
@@ -217,7 +216,7 @@ function InnerTabLayout() {
             tabBarIcon: ({ color }) => (
               <FontAwesome name="heartbeat" size={24} color={color} />
             ),
-            href:"/heartRate" // Show for authenticated users
+            href:"/heartRate"
           }}
         />
         <Tabs.Screen
@@ -227,7 +226,7 @@ function InnerTabLayout() {
             tabBarIcon: ({ color, focused }) => (
               <TabBarIcon name={focused ? 'people' : 'people-outline'} color={color} />
             ),
-            href:null // Show for authenticated users
+            href:null 
             }}
         />
       </Tabs>

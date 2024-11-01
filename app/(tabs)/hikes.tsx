@@ -45,14 +45,12 @@ export default function Hikes() {
   };
 
   const handleUserLocationChange = async () => {
-    // Request permission to access location
     const { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== 'granted') {
       console.error('Permission to access location was denied');
       return null;
     }
   
-    // Get the current location
     const location = await Location.getCurrentPositionAsync({});
     const { latitude, longitude } = location.coords;
     setCurrentLocation({ latitude, longitude });
@@ -66,7 +64,7 @@ export default function Hikes() {
     const location = await handleUserLocationChange();
     if (location) {
       setCurrentLocation(location);
-      sendSos(location); // Pass the current location to sendSos
+      sendSos(location); 
     } else {
       console.error("Error getting user location...");
     }
@@ -77,7 +75,7 @@ export default function Hikes() {
     console.log("Current location: ", location);
     
     const sosData = {
-      location: location, // Use the current location instead of selectedHike.startLocation
+      location: location, 
       time: new Date().toISOString(),
     };
     
@@ -98,7 +96,7 @@ export default function Hikes() {
   };
 
   const fetchDirections = async (start: { latitude: number; longitude: number }, end: { latitude: number; longitude: number }) => {
-    const API_KEY = process.env.MAPS_API_KEY; // Replace with your actual Google Directions API key
+    const API_KEY = process.env.MAPS_API_KEY; 
     const origin = `${start.latitude},${start.longitude}`;
     const destination = `${end.latitude},${end.longitude}`;
     const url = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&mode=walking&key=${API_KEY}`;
@@ -273,7 +271,7 @@ export default function Hikes() {
             <Text style={styles.selectedHikeTitle}>Selected Hike: {selectedHike.name}</Text>
             <MapView
               style={styles.map}
-              provider={PROVIDER_GOOGLE} // Use Google Maps
+              provider={PROVIDER_GOOGLE}
               initialRegion={{
                 latitude: selectedHike.startLocation.latitude,
                 longitude: selectedHike.startLocation.longitude,
@@ -287,8 +285,8 @@ export default function Hikes() {
               <Marker coordinate={selectedHike.finishLocation} title="Finish" />
               <Polyline
                 coordinates={routeCoordinates}
-                strokeColor="blue" // Use a color for the polyline
-                strokeWidth={3} // Use a width for the polyline
+                strokeColor="blue" 
+                strokeWidth={3} 
               />
             </MapView>
           </View>

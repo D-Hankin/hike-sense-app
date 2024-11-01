@@ -7,7 +7,7 @@ import base64 from 'react-native-base64';
 import { StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useUserContext } from '../userContext';
-import { useHeartRateContext } from '../heartRateContext'; // Import your HeartRateContext
+import { useHeartRateContext } from '../heartRateContext'; 
 import * as Location from 'expo-location';
 
 const Hikers = require("../../assets/images/hikers.jpg");
@@ -21,7 +21,7 @@ export default function HeartRate() {
     const bleManager = useMemo(() => new BleManager(), []);
     const navigation = useNavigation();
     const { dispatch, state: { user, token } } = useUserContext();
-    const { heartRateHistory, addHeartRate } = useHeartRateContext(); // Access heartRateHistory and addHeartRate from context
+    const { heartRateHistory, addHeartRate } = useHeartRateContext(); 
     const [currentLocation, setCurrentLocation] = useState<{ latitude: number; longitude: number } | null>(null);
     const lastAlertSent = useRef<number>(0);
 
@@ -100,7 +100,7 @@ export default function HeartRate() {
         console.log("Heart Rate Value:", heartRateValue);
 
         setHeartRate(heartRateValue);
-        addHeartRate(heartRateValue); // Add heart rate to context
+        addHeartRate(heartRateValue); 
 
     };
 
@@ -149,10 +149,10 @@ export default function HeartRate() {
     }
 
     const sendHeartRateAlert = async (message: string) => {
-        const now = Date.now(); // Current timestamp in milliseconds
+        const now = Date.now(); 
         console.log("lastAlertSent: ", lastAlertSent);
         console.log("difference: ", now - lastAlertSent.current);
-        // Check if 10 minutes (600,000 ms) have passed since the last alert
+
         if (now - lastAlertSent.current < 600000) {
             console.log("Alert already sent recently. Waiting 10 minutes before next alert.");
             return;
@@ -182,7 +182,6 @@ export default function HeartRate() {
             const data = await response.text();
             console.log("Alert sent:", data);
             
-            // Update the last alert sent time to now
             lastAlertSent.current = now;
         } catch (error) {
             console.error("Error sending alert:", error);
@@ -216,7 +215,7 @@ export default function HeartRate() {
                                 { length: heartRateHistory.slice(-15).length }, 
                                 (_, i) => `${i + 1}`
                             ),
-                            datasets: [{ data: heartRateHistory.slice(-15) }], // Only the last 30 data points
+                            datasets: [{ data: heartRateHistory.slice(-15) }], 
                         }}
                         width={Dimensions.get("window").width - 40}
                         height={300}
@@ -235,7 +234,7 @@ export default function HeartRate() {
                                 stroke: "#ffa726",
                             },
                             formatYLabel: (value) => {
-                                return value.split('.')[0]; // Keep everything before the decimal
+                                return value.split('.')[0]; 
                             },
                             formatXLabel: (value) => {
                                 value = ""
@@ -247,7 +246,7 @@ export default function HeartRate() {
                             marginTop: 5,
                             borderRadius: 16,
                         }}
-                        yAxisInterval={1} // Set interval to 1 to reduce ticks on y-axis
+                        yAxisInterval={1} 
                     />
                 )}
             </ScrollView>
@@ -261,14 +260,14 @@ const styles = StyleSheet.create({
     },
     scrollContainer: {
         padding: 20,
-        flexGrow: 1, // Allow ScrollView to take full height
-        justifyContent: 'center', // Center content vertically
-        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Dark grey with transparency
-        borderRadius: 20, // Rounded corners for the form
-        width: '100%', // Take up 90% of the screen width
+        flexGrow: 1, 
+        justifyContent: 'center', 
+        backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+        borderRadius: 20, 
+        width: '100%', 
     },
     header: {
-        alignItems: 'center', // Center header content
+        alignItems: 'center', 
         marginBottom: 20,
     },
     title: {
@@ -286,13 +285,13 @@ const styles = StyleSheet.create({
     dataText: {
         fontSize: 18,
         marginBottom: 10,
-        color: '#ffffff', // White text for data
+        color: '#ffffff', 
     },
     logoutButtonContainer: {
         position: 'absolute',
         top: 40,
         right: 30,
-        width: '30%', // Adjust width as needed
-        zIndex: 1, // Ensure button is above other content
+        width: '30%', 
+        zIndex: 1, 
     },
 });

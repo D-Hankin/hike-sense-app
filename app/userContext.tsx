@@ -1,14 +1,12 @@
 import { createContext, useContext, useReducer } from 'react';
 import { ReactNode } from 'react';
 
-// Define the initial state
 const initialState = {
   user: null,
-  token: null, // Add token to state
-  timestamp: null, // Add timestamp to state
+  token: null, 
+  timestamp: null,
 };
 
-// Create the UserContext
 const UserContext = createContext<{
   state: typeof initialState;
   dispatch: React.Dispatch<{ type: string; payload?: any }>;
@@ -17,7 +15,6 @@ const UserContext = createContext<{
   dispatch: () => null,
 });
 
-// Define the reducer function
 const userReducer = (state: any, action: { type: any; payload?: any; }) => {
   switch (action.type) {
     case 'SET_USER':
@@ -29,21 +26,20 @@ const userReducer = (state: any, action: { type: any; payload?: any; }) => {
       return {
         ...state,
         token: action.payload.token,
-        timestamp: action.payload.timestamp, // Save timestamp when token is set
+        timestamp: action.payload.timestamp, 
       };
     case 'LOGOUT':
       return {
         ...state,
         user: null,
         token: null,
-        timestamp: null, // Clear timestamp on logout
+        timestamp: null, 
       };
     default:
       return state;
   }
 };
 
-// Create the UserProvider component
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(userReducer, initialState);
 
@@ -54,5 +50,4 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Create a custom hook to use the UserContext
 export const useUserContext = () => useContext(UserContext);

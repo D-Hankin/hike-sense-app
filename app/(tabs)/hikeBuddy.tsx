@@ -26,14 +26,13 @@ export default function HikeBuddy() {
     if (state.token) {
     const introduceMessage = async () => {
         const initialMessage = { name: state.user?.firstName || 'Guest', prompt: 'Introduce yourself.' };
-        await sendMessageToAI(initialMessage); // Send introduction but don't show in messages
+        await sendMessageToAI(initialMessage);
     };
     introduceMessage();
   }
   }, [state.token]);
 
   useEffect(() => {
-    // Auto-scroll to bottom when messages change
     if (scrollViewRef.current) {
       scrollViewRef.current.scrollToEnd({ animated: true });
     }
@@ -64,13 +63,13 @@ export default function HikeBuddy() {
     } catch (error) {
         console.error('Error fetching AI message:', error);
     } finally {
-        setInputValue(''); // Clear input field
+        setInputValue(''); 
     }
 };
 
 const handleSend = async () => {
 
-    if (inputValue.trim() === '') return; // Prevent empty messages
+    if (inputValue.trim() === '') return; 
 
     if (!state.user) {
         console.error('User is not logged in');
@@ -78,14 +77,14 @@ const handleSend = async () => {
     }
     const newUserMessage: Message = { name: state.user.firstName, prompt: inputValue };
     setMessages((prevMessages) => [...prevMessages, newUserMessage]);
-    setInputValue(''); // Clear input field
-    await sendMessageToAI(newUserMessage); // Send user message to AI and get response
+    setInputValue(''); 
+    await sendMessageToAI(newUserMessage); 
 };
 
 const handleLogout = () => {
   dispatch({ type: 'LOGOUT' });
   navigation.navigate('index' as never);
-  setMessages([]); // Clear chat history
+  setMessages([]);
 };
 
   return (

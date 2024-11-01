@@ -115,39 +115,39 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Dark overlay for better text contrast
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   title: {
     fontSize: 32,
     fontWeight: "bold",
-    color: "#ffffff", // Light text color
+    color: "#ffffff", 
     marginBottom: 20,
     textAlign: "center",
   },
   body: {
     fontSize: 18,
     textAlign: "center",
-    color: "#ffffff", // Light text color
+    color: "#ffffff", 
     marginVertical: 10,
     paddingHorizontal: 20,
   },
   buttonContainer: {
-    marginVertical: 10, // Add space between buttons
-    width: '80%', // Make buttons occupy 80% of the container width
+    marginVertical: 10, 
+    width: '80%', 
     borderRadius: 5,
-    overflow: 'hidden', // For rounded corners
+    overflow: 'hidden', 
   },
   logoutButtonContainer: {
     position: 'absolute',
     top: 40,
     right: 20,
-    width: '30%', // Adjust width as needed
-    zIndex: 1, // Ensure it's above other elements
+    width: '30%',
+    zIndex: 1,
   },
   buttonAlerts: {
-    marginVertical: 10, // Add space between buttons
-    width: '80%', // Make buttons occupy 80% of the container width
+    marginVertical: 10, 
+    width: '80%', 
     borderRadius: 5,
-    overflow: 'hidden', // For rounded corners
+    overflow: 'hidden', 
   },
 });
